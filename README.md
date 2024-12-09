@@ -19,6 +19,9 @@ Greetings! I am excited to present my **Railway Management System** project, ins
 CREATE DATABASE train_workindia;
 USE train_workindia;
 ```
+---
+
+**Users**: Stores user credentials and roles (user/admin) for authentication.
 ```sql
 CREATE TABLE Users (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -32,9 +35,9 @@ INSERT INTO Users (name, username, password, role) VALUES
 ('User', 'user', 'password123', 'user'),
 ('Admin Boss', 'adminboss', 'adminpass', 'admin');
 ```
-**Users**: Stores user credentials and roles (user/admin) for authentication.
----
 
+---
+**user_det**: Stores detailed user information such as name, username, password, user type (admin/user), and email.
 ```sql
 CREATE TABLE user_det (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -50,10 +53,10 @@ INSERT INTO user_det (username, password, user_type, name, email) VALUES
 ('sophia_j', 'sop123', 'user', 'Sophia', 'sophia@example.com'),
 ('asha_verma', 'ash123', 'user', 'Asha', 'asha@example.com');
 ```
-**user_det**: Stores detailed user information such as name, username, password, user type (admin/user), and email.
+
 
 ---
-
+**trains**: Stores details about the trains, including train name, source, destination, and total seat count.
 ```sql
 CREATE TABLE trains (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -68,10 +71,10 @@ INSERT INTO trains (train_name, source, destination, total_seats) VALUES
 ('Shatabdi Express', 'Chennai', 'Bangalore', 300),
 ('Duronto Express', 'Kolkata', 'Pune', 400);
 ```
-**trains**: Stores details about the trains, including train name, source, destination, and total seat count.
+
 
 ---
-
+**seat_availability**: Tracks available seats for each train by referencing the train's ID.
 ```sql
 CREATE TABLE seat_availability (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -85,10 +88,10 @@ INSERT INTO seat_availability (train_id, available_seats) VALUES
 (2, 300), -- Shatabdi Express
 (3, 400); -- Duronto Express
 ```
-**seat_availability**: Tracks available seats for each train by referencing the train's ID.
+
 
 ---
-
+**bookings**: Stores booking records, linking users to trains and recording the booking date.
 ```sql
 CREATE TABLE bookings (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -99,10 +102,10 @@ CREATE TABLE bookings (
     FOREIGN KEY (train_id) REFERENCES trains(id) ON DELETE CASCADE
 );
 ```
-**bookings**: Stores booking records, linking users to trains and recording the booking date.
+
 
 ---
-
+**booking_details**: Stores details for each booking, including seat number and booking status (booked/available).
 ```sql
 CREATE TABLE booking_details (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -112,8 +115,6 @@ CREATE TABLE booking_details (
     FOREIGN KEY (booking_id) REFERENCES bookings(id) ON DELETE CASCADE
 );
 ```
-**booking_details**: Stores details for each booking, including seat number and booking status (booked/available).
-
 ---
 
 ## Step 2: Backend Setup
