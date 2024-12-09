@@ -12,7 +12,7 @@ Greetings! I am excited to present my **Railway Management System** project, ins
 
 ### Step 1: Database Initialization
 
-1. Open your MySQL interface (e.g., phpMyAdmin, MySQL Workbench, or command-line tool).
+1. Open your MySQL interface (e.g. : MySQL).
 2. Copy and execute the following SQL script to set up the database structure and seed initial data:
 
 ```sql
