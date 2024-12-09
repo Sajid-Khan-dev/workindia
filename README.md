@@ -2,6 +2,6 @@
 
 ## Technologies Used-
 
-Frontend: ReactJS
-Backend: Node.js
-Database: MySQL
+## Frontend: ReactJS
+## Backend: Node.js
+## Database: MySQL
