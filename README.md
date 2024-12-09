@@ -156,15 +156,6 @@ When using the dashboard, enter the following predefined train routes to test fu
 
 ---
 
-### Key Highlights:
-
-- **Step-by-step Instructions**: The markdown includes clear instructions for setting up the database, backend, and frontend, along with necessary commands.
-- **Code Blocks**: Proper use of markdown code blocks to present SQL, bash commands, and code.
-- **Login Credentials**: Predefined login credentials are provided for testing the system.
-- **Project Enhancements**: Encourages further improvements.
-
----
-
 ## Project Enhancements
 
 This project serves as a foundation for implementing a **Railway Management System**. Feel free to enhance its features, such as adding:
