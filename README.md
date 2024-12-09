@@ -86,3 +86,83 @@ CREATE TABLE booking_details (
     status ENUM('booked', 'available') NOT NULL DEFAULT 'available',
     FOREIGN KEY (booking_id) REFERENCES bookings(id) ON DELETE CASCADE
 );
+```
+## Step 2: Backend Setup
+
+1. Navigate to the backend directory in your terminal:
+
+    ```bash
+    cd backend
+    ```
+
+2. Install necessary dependencies:
+
+    ```bash
+    npm init -y
+    npm install express sqlite3 cors mysql2 body-parser
+    ```
+
+3. Open `server.js` in your code editor and configure the MySQL password to match your local machine settings.
+
+4. Start the backend server:
+
+    ```bash
+    node server.js
+    ```
+
+---
+
+## Step 3: Frontend Setup
+
+1. Navigate to the frontend directory:
+
+    ```bash
+    cd frontend
+    ```
+
+2. Install the required dependencies:
+
+    ```bash
+    npm install react-router-dom axios
+    ```
+
+3. Start the frontend server:
+
+    ```bash
+    npm start
+    ```
+
+---
+
+## Step 4: Login Credentials
+
+- **User Login**:
+    - Username: `user`
+    - Password: `password123`
+
+- **Admin Login**:
+    - Username: `adminboss`
+    - Password: `adminpass`
+
+---
+
+## Step 5: User Dashboard
+
+When using the dashboard, enter the following predefined train routes to test functionality:
+
+- **Source**: New Delhi → **Destination**: Mumbai
+- **Source**: Kolkata → **Destination**: Pune
+- **Source**: Chennai → **Destination**: Bangalore
+
+---
+
+## Project Enhancements
+
+This project serves as a foundation for implementing a **Railway Management System**. Feel free to enhance its features, such as adding:
+
+- Dynamic booking systems
+- Real-time seat availability checks
+- User-friendly UI components
+
+Happy coding! 🚂
+
