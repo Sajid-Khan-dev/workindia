@@ -1,8 +1,88 @@
-# Greetings! I am excited to present my Railway Management System project, a platform inspired by the IRCTC portal. While this is an attempt to replicate the core functionalities, the project is designed to demonstrate a seamless blend of front-end and back-end technologies. Below are the details of the technologies used and the steps to set it up:
+# Railway Management System
 
-## Technologies Used- Frontend: ReactJS, Backend: Node.js, Database: MySQL
+Greetings! I am excited to present my **Railway Management System** project, inspired by the IRCTC portal. While this is an attempt to replicate the core functionalities, the project is designed to demonstrate a seamless blend of **front-end** and **back-end** technologies. Below are the details of the technologies used and the steps to set it up:
 
-# Step-by-Step Setup Instructions:
-## Step 1: Database Initialization
-### 1. Open your MySQL interface (e.g., phpMyAdmin, MySQL Workbench, or command-line tool).
-### 2. Copy and execute the following SQL script to set up the database structure and seed initial data:
+## Technologies Used
+
+- **Frontend**: ReactJS
+- **Backend**: Node.js
+- **Database**: MySQL
+
+## Step-by-Step Setup Instructions
+
+### Step 1: Database Initialization
+
+1. Open your MySQL interface (e.g., phpMyAdmin, MySQL Workbench, or command-line tool).
+2. Copy and execute the following SQL script to set up the database structure and seed initial data:
+
+```sql
+CREATE DATABASE train_workindia;
+USE train_workindia;
+
+CREATE TABLE Users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(100) NOT NULL,
+    role ENUM('user', 'admin') NOT NULL
+);
+
+INSERT INTO Users (name, username, password, role) VALUES
+('User', 'user', 'password123', 'user'),
+('Admin Boss', 'adminboss', 'adminpass', 'admin');
+
+CREATE TABLE user_det (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    user_type ENUM('admin', 'user') NOT NULL DEFAULT 'user',
+    name VARCHAR(255),
+    email VARCHAR(255) UNIQUE
+);
+
+INSERT INTO user_det (username, password, user_type, name, email) VALUES
+('md_sajid', 'saj123', 'user', 'Sajid', 'sajid@example.com'),
+('sophia_j', 'sop123', 'user', 'Sophia', 'sophia@example.com'),
+('asha_verma', 'ash123', 'user', 'Asha', 'asha@example.com');
+
+CREATE TABLE trains (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    train_name VARCHAR(255) NOT NULL,
+    source VARCHAR(255) NOT NULL,
+    destination VARCHAR(255) NOT NULL,
+    total_seats INT NOT NULL
+);
+
+INSERT INTO trains (train_name, source, destination, total_seats) VALUES
+('Rajdhani Express', 'New Delhi', 'Mumbai', 500),
+('Shatabdi Express', 'Chennai', 'Bangalore', 300),
+('Duronto Express', 'Kolkata', 'Pune', 400);
+
+CREATE TABLE seat_availability (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    train_id INT NOT NULL,
+    available_seats INT NOT NULL,
+    FOREIGN KEY (train_id) REFERENCES trains(id) ON DELETE CASCADE
+);
+
+INSERT INTO seat_availability (train_id, available_seats) VALUES
+(1, 500), -- Rajdhani Express
+(2, 300), -- Shatabdi Express
+(3, 400); -- Duronto Express
+
+CREATE TABLE bookings (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    train_id INT NOT NULL,
+    booking_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES user_det(id) ON DELETE CASCADE,
+    FOREIGN KEY (train_id) REFERENCES trains(id) ON DELETE CASCADE
+);
+
+CREATE TABLE booking_details (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    booking_id INT NOT NULL,
+    seat_number INT NOT NULL,
+    status ENUM('booked', 'available') NOT NULL DEFAULT 'available',
+    FOREIGN KEY (booking_id) REFERENCES bookings(id) ON DELETE CASCADE
+);
