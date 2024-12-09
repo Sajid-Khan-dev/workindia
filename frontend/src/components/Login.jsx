@@ -10,9 +10,9 @@ const Login = () => {
 
     const handleLogin = async (e) => {
         e.preventDefault();
-        setError(null); // Reset previous errors
+        setError(null);
 
-        // Validate inputs
+        
         if (!username || !password) {
             setError("Please enter both username and password.");
             return;
@@ -25,7 +25,7 @@ const Login = () => {
                 body: JSON.stringify({ username, password }),
             });
 
-            // Handle response
+            
             if (response.ok) {
                 const data = await response.json();
                 if (data.role === "user") {

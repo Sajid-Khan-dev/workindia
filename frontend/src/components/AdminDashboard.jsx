@@ -11,7 +11,6 @@ const AdminDashboard = () => {
     const [availableSeats, setAvailableSeats] = useState("");
     const [message, setMessage] = useState("");
 
-    // Handle adding a new train
     const handleAddTrain = async (e) => {
         e.preventDefault();
 
@@ -28,7 +27,6 @@ const AdminDashboard = () => {
         }
     };
 
-    // Handle updating available seats for a train
     const handleUpdateSeats = async (e) => {
         e.preventDefault();
 

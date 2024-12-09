@@ -1,4 +1,4 @@
-/* General styles */
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f7fb;
@@ -17,15 +17,13 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
   
-  /* Header */
   h1 {
     text-align: center;
     color: #2d3e50;
     font-size: 2.5rem;
     margin-bottom: 20px;
   }
-  
-  /* Search form styles */
+
   .search-container {
     display: flex;
     justify-content: space-between;
@@ -62,7 +60,6 @@ body {
     background-color: #2c56c9;
   }
   
-  /* Error and success messages */
   .error {
     color: #e74a3b;
     font-size: 1rem;
@@ -77,7 +74,6 @@ body {
     text-align: center;
   }
   
-  /* Train list styles */
   .train-list {
     list-style-type: none;
     padding: 0;
@@ -125,7 +121,6 @@ body {
     font-weight: bold;
   }
   
-  /* Booking details styles */
   h3 {
     color: #2d3e50;
     font-size: 1.5rem;
@@ -146,7 +141,6 @@ body {
     margin-top: 30px;
   }
   
-  /* Responsive Styles */
   @media (max-width: 768px) {
     .search-container {
       flex-direction: column;
