@@ -164,5 +164,3 @@ This project serves as a foundation for implementing a **Railway Management Syst
 - Real-time seat availability checks
 - User-friendly UI components
 
-Happy coding! 🚂
-
