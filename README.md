@@ -84,9 +84,9 @@ CREATE TABLE seat_availability (
 );
 
 INSERT INTO seat_availability (train_id, available_seats) VALUES
-(1, 500), -- Rajdhani Express
-(2, 300), -- Shatabdi Express
-(3, 400); -- Duronto Express
+(1, 500), 
+(2, 300), 
+(3, 400); 
 ```
 
 
