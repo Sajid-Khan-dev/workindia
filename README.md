@@ -4,5 +4,5 @@
 
 # Step-by-Step Setup Instructions:
 ## Step 1: Database Initialization
-### 1.Open your MySQL interface (e.g., phpMyAdmin, MySQL Workbench, or command-line tool).
-### 2.Copy and execute the following SQL script to set up the database structure and seed initial data:
+### 1. Open your MySQL interface (e.g., phpMyAdmin, MySQL Workbench, or command-line tool).
+### 2. Copy and execute the following SQL script to set up the database structure and seed initial data:
